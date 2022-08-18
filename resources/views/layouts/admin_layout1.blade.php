@@ -27,6 +27,8 @@
     <ul class="list-unstyled">
     <li><a href="{{route('admin')}}" class="text-decoration-none"style="display:inline-block">admins</a></li>
     <li><a href="{{route('gallery')}}" class="text-decoration-none" style="display:inline-block">gallery</a></li>
+    <li><a href="{{route('team')}}" class="text-decoration-none" style="display:inline-block">Our team</a></li>
+    <li><a href="{{route('workProcess')}}" class="text-decoration-none" style="display:inline-block">workProcess</a></li>
   </ul>
   </div>
 </div>

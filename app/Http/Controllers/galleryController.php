@@ -12,8 +12,17 @@ class galleryController extends Controller
             'description'=>'required',
             'img'=>'required|image',
         ]);
-        
-        return redirect()->route('admin/gallery');
-
+       $path=$request->file('img')->store('uploads','public');
+    $example= gallery::create([
+      'title'=>$validated['title'],
+      'description'=>$validated['description'],
+      'img_url'=>$path
+     ]);
+        return redirect()->route('gallery');
+   }
+   public function delete($id){
+    $image=gallery::findOrFail($id);
+      $image->delete();
+      return redirect()->route('gallery');
    }
 }

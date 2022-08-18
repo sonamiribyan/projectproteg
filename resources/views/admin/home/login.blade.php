@@ -8,7 +8,7 @@
   <div class="form-group">
   <input class="form-control form-control-md mt-3" type="email" placeholder="email" name="email">
   <input class="form-control form-control-md mt-3" type="password" placeholder="password" name="password">
-  <button class="btn btn-success mt-3">login</button>
+  <button class="btn btn-success mt-3">loginn</button>
 </div>
 </form>
 </div>
