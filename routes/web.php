@@ -106,3 +106,6 @@ Route::get('/admin/contact',function(){
         'contact'=>$contact
     ]);
 })->name('contact');
+Route::get('admin/contact/update/{id}',[ContactController::class,'update'])->name('contact.update');
+Route::post('admin/contact/update/{id}',[ContactController::class,'restore'])->name('contact.restore');
+

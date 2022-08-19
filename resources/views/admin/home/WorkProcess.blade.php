@@ -1,19 +1,16 @@
 @extends('layouts.admin_layout1')
 @section('content')
-<div class="row justify-content-center align-items-center">
-    <div class="col-6">
-    @if($workProcess->count()==0)
-    <button class="btn btn-primary"><a href="{{route('workProcess.create')}}" class="text-white">create</a></button>
-      @endif 
-      @if($workProcess->count()!==0)
+<div class="row">
+    <div class="col-4">
     @foreach($workProcess as $workprocess)
-    <div>
     <h3>{{$workprocess->title}}</h3>
     <p>{{$workprocess->description}}</p>
-    <button class="btn btn-primary"><a href="{{route('workProcess.update',$workprocess->id)}}" class="text-white">change</a></button>
-</div>
+    <button class="btn btn-primary"><a href="{{route('workProcess.update',$workprocess->id)}}" class="text-white text-decoration-none ">change</a></button>
     @endforeach
-    @endif 
 </div>
+</div>
+<div class="row">
+  <div class="col mt-5">
+<button class="btn btn-primary"><a href="{{route('workProcess.create')}}" class="text-white text-decoration-none">create</a></button>
 </div>
 @endsection
