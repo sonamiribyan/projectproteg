@@ -31,6 +31,8 @@
     <li><a href="{{route('workProcess')}}" class="text-decoration-none" style="display:inline-block">workProcess</a></li>
     <li><a href="{{route('project')}}" class="text-decoration-none" style="display:inline-block">project</a></li>
     <li><a href="{{route('blog')}}" class="text-decoration-none" style="display:inline-block">blog</a></li>
+     <li><a href="{{route('about')}}" class="text-decoration-none" style="display:inline-block">About us</a></li>
+     <li><a href="{{route('contact')}}" class="text-decoration-none" style="display:inline-block">contact</a></li>
   </ul>
   </div>
 </div>

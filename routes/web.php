@@ -7,10 +7,14 @@ use App\Http\Controllers\WorkProcessController;
 use App\Models\User;
 use App\Models\project;
 use App\Http\Controllers\ProjectController;
+use App\Models\About;
 use App\Models\gallery;
 use App\Models\blog;
+use App\Models\contact;
 use App\Http\Controllers\galleryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,3 +92,17 @@ Route::post('admin/blog/create',[BlogController::class,'store'])->name('blog.sto
 Route::get('admin/blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
 Route::get('admin/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
 Route::post('admin/blog/update/{id}',[BlogController::class,'restore'])->name('blog.restore');
+Route::get('/admin/about',function(){
+    $about=About::all();
+    return view('admin.home.about',[
+        'about'=>$about
+    ]);
+})->name('about');
+Route::get('admin/about/update/{id}',[AboutController::class,'update'])->name('about.update');
+Route::post('admin/about/update/{id}',[AboutController::class,'restore'])->name('about.restore');
+Route::get('/admin/contact',function(){
+    $contact=contact::all();
+    return view('admin.home.contact',[
+        'contact'=>$contact
+    ]);
+})->name('contact');
