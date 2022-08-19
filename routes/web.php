@@ -5,8 +5,13 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkProcessController;
 use App\Models\User;
+use App\Models\project;
+use App\Http\Controllers\ProjectController;
 use App\Models\gallery;
+use App\Models\blog;
 use App\Http\Controllers\galleryController;
+use App\Http\Controllers\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +67,24 @@ Route::get('/admin/workingProcess/create',[WorkProcessController::class,'create'
 Route::post('/admin/workingProcess/create',[WorkProcessController::class,'store'])->name('workProcess.store');
 Route::get('/admin/workingProcess/update/{id}',[WorkProcessController::class,'update'])->name('workProcess.update');
 Route::post('/admin/workingProcess/update/{id}',[WorkProcessController::class,'restore'])->name('workProcess.restore');
+Route::get('/admin/project',function(){
+    $project=project::all();
+    return view('admin.home.project',[
+        'project'=>$project
+    ]);
+})->name('project');
+Route::post('admin/project/create',[ProjectController::class,'store'])->name('project.store');
+Route::get('admin/project/delete/{id}',[ProjectController::class,'delete'])->name('project.delete');
+Route::get('/admin/project/update/{id}',[ProjectController::class,'update'])->name('project.update');
+Route::post('/admin/project/update/{id}',[ProjectController::class,'restore'])->name('project.restore');
 
-
-
+Route::get('/admin/blog',function(){
+    $blog=blog::all();
+    return view('admin.home.blog',[
+        'blog'=>$blog
+    ]);
+})->name('blog');
+Route::post('admin/blog/create',[BlogController::class,'store'])->name('blog.store');
+Route::get('admin/blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
+Route::get('admin/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
+Route::post('admin/blog/update/{id}',[BlogController::class,'restore'])->name('blog.restore');

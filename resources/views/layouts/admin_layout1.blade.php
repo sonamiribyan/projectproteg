@@ -29,11 +29,19 @@
     <li><a href="{{route('gallery')}}" class="text-decoration-none" style="display:inline-block">gallery</a></li>
     <li><a href="{{route('team')}}" class="text-decoration-none" style="display:inline-block">Our team</a></li>
     <li><a href="{{route('workProcess')}}" class="text-decoration-none" style="display:inline-block">workProcess</a></li>
+    <li><a href="{{route('project')}}" class="text-decoration-none" style="display:inline-block">project</a></li>
+    <li><a href="{{route('blog')}}" class="text-decoration-none" style="display:inline-block">blog</a></li>
   </ul>
   </div>
 </div>
 <div class="container">
 @yield('content')
 </div>
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 </body>
 </html>
